@@ -24,7 +24,7 @@ class List extends Component<MyProps> {
                     <div className="Item" key={index}>
                         <h3> {item.title} </h3>
                         <p> {item.author} </p>
-                        <p> {item.url} </p>
+                        <p> <a href={item.url} target='_blank' rel="noreferrer"> {item.url} </a> </p>
                     </div>
                 ))}
             </div>

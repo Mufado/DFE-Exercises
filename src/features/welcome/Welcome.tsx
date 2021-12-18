@@ -43,8 +43,8 @@ class Welcome extends Component<MyProps, MyState> {
 
     return (
       <div className='Welcome'>
-        <Header title={title}> <Input label={inputLabel} callback={this.getData}> </Input> </Header>
-        <Section className="Lista"> <List apiData={searchData} /> </Section>
+        <Header title={title}> <Input label={inputLabel} callback={this.getData}/> </Header>
+        <Section> <List apiData={searchData} /> </Section>
         <Footer copyright={copyright}>  </Footer>
       </div>
     );

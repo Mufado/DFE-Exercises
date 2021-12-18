@@ -33,10 +33,9 @@ class Input extends Component<MyProps, MyStates> {
         const { label } = this.props;
 
         return (
-            <div>
-                <label > {label} </label>
-                <input type="text" onChange={this.handleChangeSearchbar} />
-                <button onClick={this.handleSubmitSearch}> <img src={button} /> </button>
+            <div className="Input">
+                <input type="text" placeholder={label} onChange={this.handleChangeSearchbar} />
+                <img src={button} onClick={this.handleSubmitSearch}/>
             </div>
         );
     }
