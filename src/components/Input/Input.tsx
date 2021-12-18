@@ -23,7 +23,7 @@ class Input extends Component<MyProps, MyStates> {
         this.setState({ text: event.target.value });
     }
 
-    handleSubmitSearch(event: any) {
+    handleSubmitSearch() {
         const { callback } = this.props;
         
         callback(this.state.text);

@@ -12,7 +12,7 @@ class List extends Component<MyProps> {
     }
 
     render() {
-        const { apiData } = this.props as any;
+        const { apiData } = this.props;
 
         if (apiData == null) {
             return <div></div>;
