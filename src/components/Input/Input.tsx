@@ -2,15 +2,19 @@ import React, { Component } from "react";
 import button from '../../images/searchbutton.svg';
 import './Input.css';
 
-interface MyProps{
-    callback?: any;
-    label?: any;
+interface MyProps {
+    callback: any;
+    label?: string;
 }
 
-class Input extends Component<MyProps> {
+interface MyStates {
+    text: string
+}
+
+class Input extends Component<MyProps, MyStates> {
     constructor(props: any) {
         super(props);
-        this.state = {text: ''};
+        this.state = { text: '' };
         this.handleChangeSearchbar = this.handleChangeSearchbar.bind(this);
         this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
     }
@@ -21,7 +25,8 @@ class Input extends Component<MyProps> {
 
     handleSubmitSearch(event: any) {
         const { callback } = this.props;
-        callback(event.target.value);
+        
+        callback(this.state.text);
     }
 
     render() {
@@ -29,9 +34,9 @@ class Input extends Component<MyProps> {
 
         return (
             <div>
-                <label > { label } </label>
+                <label > {label} </label>
                 <input type="text" onChange={this.handleChangeSearchbar} />
-                <button onClick={this.handleSubmitSearch}> <img src={button}/> </button>
+                <button onClick={this.handleSubmitSearch}> <img src={button} /> </button>
             </div>
         );
     }
