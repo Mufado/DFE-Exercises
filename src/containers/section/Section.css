@@ -1,0 +1,8 @@
+.Section {
+    float: left;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-areas: ". list .";
+    width: 100%;
+    overflow: auto;
+}
