@@ -2,18 +2,35 @@
     float: left;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "logo input .";
     width: 100%;
     align-items: center;
 }
 
-.Header h1 {
+.Header .Logo{
     float: left;
+    grid-area: logo;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.Header .Logo h1 {
+    float: left;
+    margin-bottom: 10%;
+    margin-left: 5%;
+}
+
+.Header .Logo img {
+    float: left;
+    width: 15%;
+    margin-bottom: 3%;
 }
 
 .Header header {
     float: left;
+    grid-area: input;
     display: flex;
     justify-content: center;
 }

@@ -1,4 +1,11 @@
 .Footer {
     float: left;
+    display: flex;
     background-color: #041E37;
+    align-items: center;
+    justify-content: center;
+}
+
+.Footer footer {
+    color: #61DAFB;
 }
