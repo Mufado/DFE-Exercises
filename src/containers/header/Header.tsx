@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './Header.css';
+import reactLogo from '../../images/reactlogo.svg'
 
 interface MyProps {
     title: string;
@@ -17,7 +18,10 @@ class Header extends Component<MyProps> {
 
         return (
             <div className="Header">
-                <h1> {title} </h1>
+                <div className="Logo">
+                    <img src={reactLogo} />
+                    <h1> {title} </h1>
+                </div>
                 <header> {children} </header>
             </div>
         );
