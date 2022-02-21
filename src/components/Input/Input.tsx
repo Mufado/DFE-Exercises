@@ -1,13 +1,11 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import button from '../../images/searchbutton.svg';
 import './Input.css';
 
 const Input = ({ callback, label }: any) => {
-  const [text, setText] = React.useState('');
-
-  const handleChangeSearchbar = (event: any) => {
-    setText(event.target.value);
-  }
+  let text = useSelector(state => state);
+  const dispatch = useDispatch();
 
   const handleSubmitSearch = () => {
     callback(text);
@@ -15,7 +13,7 @@ const Input = ({ callback, label }: any) => {
 
   return (
     <div className="Input">
-      <input type="text" placeholder={label} onChange={handleChangeSearchbar} />
+      <input type="text" placeholder={label} onChange={() => dispatch({ type: 'SEARCH', search: "text" })} />
       <img src={button} onClick={handleSubmitSearch} />
     </div>
   );

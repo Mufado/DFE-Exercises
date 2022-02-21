@@ -5,20 +5,21 @@ import Section from '../../containers/section';
 import Footer from '../../containers/footer';
 import Input from '../../components/Input';
 import List from '../../components/List';
-import api from '../../service/api';
+import api from '../../service/shared/api';
+import { useSelector } from 'react-redux';
 
 const Welcome = ({ title, copyright }: any) => {
   const [searchData, setSearchData] = React.useState([]);
+  const inputLabel = 'Buscar...';
+  let searchText = useSelector(state => state);
 
-  const getData = async (search: string) => {
-    const response = await api.get('/search?query=' + search);
+  const getData = async () => {
+    const response = await api.get('/search?query=' + searchText);
     setSearchData(response.data.hits);
     console.log(response.data);
   }
 
-  useEffect(() => { getData('') }, []);
-
-  const inputLabel = 'Buscar...';
+  useEffect(() => { getData() }, []);
 
   return (
     <div className='Welcome'>
