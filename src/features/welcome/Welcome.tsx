@@ -7,11 +7,12 @@ import Input from '../../components/Input';
 import List from '../../components/List';
 import api from '../../service/shared/api';
 import { useSelector } from 'react-redux';
+import { IState } from '../../redux/reducer';
 
 const Welcome = ({ title, copyright }: any) => {
   const [searchData, setSearchData] = React.useState([]);
   const inputLabel = 'Buscar...';
-  let searchText = useSelector(state => state);
+  const searchText = useSelector<IState, IState["search"]>(state => state.search);
 
   const getData = async () => {
     const response = await api.get('/search?query=' + searchText);
