@@ -17,7 +17,6 @@ const Welcome = ({ title, copyright }: any) => {
   const getData = async () => {
     const response = await api.get('/search?query=' + searchText);
     setSearchData(response.data.hits);
-    console.log(response.data);
   }
 
   useEffect(() => { getData() }, []);
